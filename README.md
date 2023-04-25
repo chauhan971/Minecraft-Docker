@@ -1,7 +1,7 @@
 # Minecraft-Docker
 
-How to run Dockercraft
-Install Minecraft: minecraft.net
+1. How to run Dockercraft
+              Install Minecraft: minecraft.net
 
 The Minecraft client hasn't been modified, just get the official release.
 
@@ -13,11 +13,12 @@ or
 git clone git@github.com:docker/dockercraft.git
 docker build -t gaetan/dockercraft dockercraft
 Run Dockercraft container:
-
+"""
 docker run -t -i -d -p 25565:25565 \
 -v /var/run/docker.sock:/var/run/docker.sock \
 --name dockercraft \
 gaetan/dockercraft
+"""
 Mounting /var/run/docker.sock inside the container is necessary to send requests to the Docker remote API.
 
 The default port for a Minecraft server is 25565, if you prefer a different one: -p <port>:25565
